@@ -19,7 +19,6 @@
 	(:htn
 		:parameters ()
 		:subtasks (and
-		 (task0 (do_observation site2 infrared2))
 		 (task1 (do_observation site3 infrared2))
 		 (task2 (do_observation site4 infrared0))
 		 (task3 (do_observation site5 infrared2))
@@ -58,7 +57,8 @@
 		(= (turn-time site5 site1) 681.1)
 		(= (turn-time site5 site2) 558.7)
 		(= (turn-time site5 site3) 490.2)
-		(= (turn-time site5 site4) 237.2))
+		(= (turn-time site5 site4) 237.2)
+		(= (image-quality satellite0) 0)
 		(at 500 (observable site1))
 		(at 1000 (not (observable site1)))
 		(at 5 (observable site2))
@@ -70,4 +70,5 @@
 		(at 1050 (observable site5))
 		(at 2500 (not (observable site5)))
 	)
+	(:metric maximize (image-quality satellite0))
 )
